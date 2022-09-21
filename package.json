@@ -1,0 +1,25 @@
+{
+  "name": "loginformulario",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/G43R1EL/logInFormulario.git"
+  },
+  "keywords": [
+    "session",
+    "storage",
+    "cookies",
+    "login"
+  ],
+  "author": "Nelson Gabriel Hernández",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/G43R1EL/logInFormulario/issues"
+  },
+  "homepage": "https://github.com/G43R1EL/logInFormulario#readme"
+}
