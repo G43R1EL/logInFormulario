@@ -1,25 +1,29 @@
-let admin = false
-
 const users = [
     {
         username: "gabriel",
-        password: "password"
+        password: "password",
+        role: "user"
     },
     {
         username: "admin",
-        password: "123456"
+        password: "123456",
+        role: "admin"
     },
     {
         username: "root",
-        password: "root"
+        password: "root",
+        role: "admin"
     }
 ]
 
-const isAuthenticated = (req, res, next) => {
-    const username = req.params.username
-    const password = req.params.password
-    if (admin) {
-        return next()
+const Authentication = (req, res) => {
+    const username = req.body.username
+    const password = req.body.password
+    const user = users.find((obj) => obj.username === username && obj.password === password)
+    if (user) {
+        req.session.user = user.username
+        req.session.admin = user.role === "admin"
+        res.redirect('/')
     } else {
         const response = {
             error: -1,
@@ -30,5 +34,5 @@ const isAuthenticated = (req, res, next) => {
 }
 
 module.exports = {
-    isAuthenticated: isAuthenticated
+    Authentication: Authentication
 }
